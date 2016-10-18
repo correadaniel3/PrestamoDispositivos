@@ -9,7 +9,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL;
+import co.edu.udea.iw.prestamodispositivos.dao.DispositivoDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO;
+import co.edu.udea.iw.prestamodispositivos.dao.UsuarioDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo;
 import co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud;
@@ -25,6 +27,8 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 public class SolicitudBLImpl implements SolicitudBL {
 
 	private SolicitudDAO solicitudDAO;
+	private DispositivoDAO dispositivoDAO;
+	private UsuarioDAO usuarioDAO;
 
 	/* (non-Javadoc)
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL#guardar(java.lang.Integer, co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo, co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud, co.edu.udea.iw.prestamodispositivos.modelo.Usuario, int, java.util.Date, java.util.Date)
@@ -73,5 +77,21 @@ public class SolicitudBLImpl implements SolicitudBL {
 
 	public void setSolicitudDAO(SolicitudDAO solicitudDAO) {
 		this.solicitudDAO = solicitudDAO;
+	}
+	
+	public DispositivoDAO getDispositivoDAO() {
+		return dispositivoDAO;
+	}
+
+	public void setDispositivoDAO(DispositivoDAO dispositivoDAO) {
+		this.dispositivoDAO = dispositivoDAO;
+	}
+
+	public UsuarioDAO getUsuarioDAO() {
+		return usuarioDAO;
+	}
+
+	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
+		this.usuarioDAO = usuarioDAO;
 	}
 }

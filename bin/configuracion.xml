@@ -66,8 +66,10 @@
 		<property name="tipodocumentoDAO" ref="tipodocumentoDAO"></property>
 	</bean>
 
-	<bean id="solicitudBL" class="co.edu.udea.iw.prestamodispositivos.bl.impl.SolicitudBLImpl">
+	<bean id="solicitudBLImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.SolicitudBLImpl">
 		<property name="solicitudDAO" ref="solicitudDAO"></property>
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+		<property name="dispositivoDAO" ref="dispositivoDAO"></property>
 	</bean>
 
 	<bean id="usuarioBlImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl">
