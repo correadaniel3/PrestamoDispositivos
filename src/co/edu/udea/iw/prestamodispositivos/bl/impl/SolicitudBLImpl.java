@@ -39,8 +39,14 @@ public class SolicitudBLImpl implements SolicitudBL {
 		if(dispositivo==null){
 			throw new DAOException("No ha seleccionado un dispositivo valido");
 		}
+		if(dispositivoDAO.obtenerPorId(dispositivo.getId())==null){
+			throw new DAOException("El dispositivo no existe en la base de datos");
+		}
 		if(usuario==null){
 			throw new DAOException("No se ha detectado el usuario correctamente");
+		}
+		if(usuarioDAO.obtenerPorId(usuario.getNombreusuario())==null){
+			throw new DAOException("El usuario no existe en la base de datos");
 		}
 		if(cantidad<=0 || ((Integer)cantidad)==null){
 			throw new DAOException("La cantidad no es valida");
