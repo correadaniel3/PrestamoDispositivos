@@ -14,7 +14,6 @@ import org.hibernate.criterion.Restrictions;
 
 import co.edu.udea.iw.prestamodispositivos.dao.UsuarioDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
-import co.edu.udea.iw.prestamodispositivos.modelo.Solicitud;
 import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 
 /**

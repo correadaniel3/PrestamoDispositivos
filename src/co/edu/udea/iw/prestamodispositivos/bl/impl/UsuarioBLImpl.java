@@ -3,8 +3,6 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
-import org.hibernate.exception.DataException;
-
 import co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL;
 import co.edu.udea.iw.prestamodispositivos.dao.RolDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.UsuarioDAO;

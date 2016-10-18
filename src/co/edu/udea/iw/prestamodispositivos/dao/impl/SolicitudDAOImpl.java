@@ -3,7 +3,6 @@
  */
 package co.edu.udea.iw.prestamodispositivos.dao.impl;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.hibernate.Criteria;

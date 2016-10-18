@@ -7,7 +7,6 @@ import co.edu.udea.iw.prestamodispositivos.bl.EstadosolicitudBL;
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud;
-import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 
 /**

@@ -3,8 +3,6 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.edu.udea.iw.prestamodispositivos.bl.RolBL;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
-import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 
 /**
  * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase RolBLImpl

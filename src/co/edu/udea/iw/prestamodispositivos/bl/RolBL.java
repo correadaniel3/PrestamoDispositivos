@@ -4,7 +4,6 @@
 package co.edu.udea.iw.prestamodispositivos.bl;
 
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
-import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 
 /**
  * Interfaz que expone los métodos de la logica del negocio para la tabla rol

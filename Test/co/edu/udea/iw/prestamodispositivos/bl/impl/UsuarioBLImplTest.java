@@ -15,7 +15,6 @@ import co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
-import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 
 /**
  * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase UsuarioBLImpl
