@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
@@ -15,16 +15,16 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 
 /**
- * Clase que implementa los métodos de la logica del negocio para la tabla usuario de la base de datos usuario
+ * Clase que implementa los mï¿½todos de la logica del negocio para la tabla usuario de la base de datos usuario
  * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
 public class UsuarioBLImpl implements UsuarioBL {
-	
+
 	private UsuarioDAO usuarioDAO;
 	private RolDAO rolDAO;
-	
+
 	/* (non-Javadoc)
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL#validarAutentificacion(java.lang.String, java.lang.String)
 	 */
@@ -35,14 +35,14 @@ public class UsuarioBLImpl implements UsuarioBL {
 			throw new DAOException("El nombre de usuario es incorrecto");
 		}
 		if(Validaciones.isTextoVacio(contrasena)){
-			throw new DAOException("La contraseña es incorrecta");
+			throw new DAOException("La contraseï¿½a es incorrecta");
 		}
 		usuario = usuarioDAO.obtenerPorId(nombreusuario);
 		if(usuario == null){
-			throw new DAOException("El Usuario o la contraseña ingresada son incorrectas");
+			throw new DAOException("El Usuario o la contraseï¿½a ingresada son incorrectas");
 		}
 		if(!usuario.getContrasena().equals(contrasena)){
-			throw new DAOException("El Usuario o la contraseña ingresada son incorrectas");
+			throw new DAOException("El Usuario o la contraseï¿½a ingresada son incorrectas");
 		}
 		return Boolean.TRUE;
 	}
@@ -72,7 +72,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(Validaciones.isTextoVacio(correoelectronico)){
 			throw new DAOException("El correo electronico del usuario es incorrecto");
 		}
-		if(Validaciones.isEmail(correoelectronico)){
+		if(!Validaciones.isEmail(correoelectronico)){
 			throw new DAOException("El correo electronico del usuario es incorrecto");
 		}
 		if(rol == null){
@@ -83,7 +83,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 			throw new DAOException("El rol de usuario no existe");
 		}
 		if(Validaciones.isTextoVacio(contrasena)){
-			throw new DAOException("La contraseña es incorrecta");
+			throw new DAOException("La contraseï¿½a es incorrecta");
 		}
 		if(Validaciones.isTextoVacio(nombreusuario)){
 			throw new DAOException("El nombre de usuario es incorrecto");
@@ -91,7 +91,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(usuarioDAO.obtenerPorId(nombreusuario) != null){
 			throw new DAOException("El nombre de usuario no esta disponible");
 		}
-		usuario = new Usuario(nombreusuario, rol, tipodocumento, documento, 
+		usuario = new Usuario(nombreusuario, rol, tipodocumento, documento,
 				nombres, apellidos, correoelectronico, contrasena);
 		usuarioDAO.guardar(usuario);
 	}
@@ -119,7 +119,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(Validaciones.isTextoVacio(correoelectronico)){
 			throw new DAOException("El correo electronico del usuario es incorrecto");
 		}
-		if(Validaciones.isEmail(correoelectronico)){
+		if(!Validaciones.isEmail(correoelectronico)){
 			throw new DAOException("El correo electronico del usuario es incorrecto");
 		}
 		if(rol == null){
@@ -135,10 +135,25 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(Validaciones.isTextoVacio(nombreusuario)){
 			throw new DAOException("El nombre de usuario es incorrecto");
 		}
-		usuario = new Usuario(nombreusuario, rol, tipodocumento, documento, 
+		usuario = new Usuario(nombreusuario, rol, tipodocumento, documento,
 				nombres, apellidos, correoelectronico, contrasena);
 		usuarioDAO.actualizar(usuario);
+	}
 
+	/* (non-Javadoc)
+	 * @see co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL#buscarPorID(java.lang.String)
+	 */
+	@Override
+	public Usuario buscarPorID(String nombreusuario) throws DAOException {
+		Usuario usuario = null;
+		if (Validaciones.isTextoVacio(nombreusuario)) {
+			throw new DAOException("El nombre de usuario es incorrecto");
+		}
+		usuario = usuarioDAO.obtenerPorId(nombreusuario);
+		if(usuario == null){
+			throw new DAOException("No existe el usuario con el nombre "+nombreusuario);
+		}
+		return usuario;
 	}
 
 	public RolDAO getRolDAO() {

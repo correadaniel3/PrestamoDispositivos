@@ -34,7 +34,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		List<Usuario> resultado = null;
 		try{
 			session = sessionFactory.openSession();
-			Criteria criteria = session.createCriteria(Solicitud.class);
+			Criteria criteria = session.createCriteria(Usuario.class);
 			resultado = criteria.list();
 		}catch(HibernateException e){
 			throw new DAOException(e);
@@ -61,6 +61,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			session.save(usuario);
 			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{
@@ -77,10 +78,14 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	@Override
 	public void actualizar(Usuario usuario) throws DAOException {
 		Session session = null;
+		Transaction transaccion = null;
 		try{
 			session = sessionFactory.openSession();
+			transaccion = session.beginTransaction();
 			session.update(usuario);
+			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{

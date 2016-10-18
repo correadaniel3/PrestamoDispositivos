@@ -12,72 +12,61 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import co.edu.udea.iw.prestamodispositivos.dao.UsuarioDAO;
-import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
-import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
-import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
-
+import co.edu.udea.iw.prestamodispositivos.dao.RolDAO;
+import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 /**
- * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase UsuarioDAOImpl
+ * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase RolDAOImpl
  * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations=("classpath:configuracion.xml"))
-public class UsuarioDAOImplTest {
-
+public class RolDAOImplTest {
 	@Autowired
-	UsuarioDAO dao;
+	RolDAO dao;
 	
-	@Test
+	@Test 
 	public void testObtenerTodos() {
-		List<Usuario> resultado = null;
+		List<Rol> resultado = null;
 		try {
 			resultado = dao.obtenerTodos();
+			System.out.println(resultado.toString());
 			assertTrue(resultado.size() > 0);
 		} catch (DAOException e) {
-			fail(e.getMessage());
+			new DAOException(e);
 		}
 	}
 	
-	//@Test
+	@Test
 	public void testguardar() {
-		Usuario resultado = new Usuario("julanito", new Rol(2, "Usuario"), 
-				new Tipodocumento(2, "Tarjeta de Identidad"), "220232302",
-				"julanito de tal", "de tales y pascuales", 
-				"julanito@pascuales.com", "julanito");
+		Rol resultado = new Rol(14212, "Usuario frecuente");
 		try {
 			dao.guardar(resultado);
 		} catch (DAOException e) {
-			fail(e.getMessage());
+			new DAOException(e);
 		}
 	}
-	
 	@Test
 	public void testObtenerRolPorID() {
-		Usuario resultado = null;
+		Rol resultado = null;
 		try {
-			resultado = dao.obtenerPorId("julanito");
+			resultado = dao.obtenerPorId(120);
 			assertTrue(resultado!= null);
 		} catch (DAOException e) {
-			fail(e.getMessage());
+			new DAOException(e);
 		}
 	}
-	
 	@Test
 	public void testEditCity() {
-		Usuario resultado = null;
+		Rol resultado = new Rol();
 		try {
-			resultado = new Usuario("julanito", new Rol(2, "Usuario"), 
-					new Tipodocumento(2, "Tarjeta de Identidad"), "5000000",
-					"julanito de tal", "de nada", 
-					"julanito@pascuales.com", "julanito");
+			resultado.setId(1421);
+			resultado.setNombre("LOLO");
 			dao.actualizar(resultado);
 		} catch (DAOException e) {
-			fail(e.getMessage());
+			new DAOException(e);
 		}
 	}
-
 }

@@ -34,7 +34,7 @@ public class RolDAOImpl implements RolDAO {
 		List<Rol> resultado = null;
 		try{
 			session = sessionFactory.openSession();
-			Criteria criteria = session.createCriteria(Solicitud.class);
+			Criteria criteria = session.createCriteria(Rol.class);
 			resultado = criteria.list();
 		}catch(HibernateException e){
 			throw new DAOException(e);
@@ -61,6 +61,7 @@ public class RolDAOImpl implements RolDAO {
 			session.save(rol);
 			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{
@@ -78,14 +79,18 @@ public class RolDAOImpl implements RolDAO {
 	@Override
 	public void actualizar(Rol rol) throws DAOException {
 		Session session = null;
+		Transaction transaction = null;
 		try{
 			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
 			session.update(rol);
+			transaction.commit();
 		}catch(HibernateException e){
+			transaction.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{
-				if(session!=null)session.close();
+				if(session != null)session.close();
 			}catch(HibernateException e){
 				throw new DAOException(e);
 			}
@@ -98,12 +103,16 @@ public class RolDAOImpl implements RolDAO {
 	@Override
 	public void borrar(int id) throws DAOException {
 		Session session = null;
+		Transaction transaction = null;
 		Solicitud solicitud = new Solicitud();
 		solicitud.setId(id);
 		try{
 			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
 			session.delete(solicitud);
+			transaction.commit();
 		}catch(HibernateException e){
+			transaction.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{

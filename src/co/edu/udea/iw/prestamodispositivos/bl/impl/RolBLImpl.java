@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
@@ -10,7 +10,7 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 
 /**
- * Clase que implementa los métodos de la logica del negocio para la tabla de la base de datos solicitud
+ * Clase que implementa los mï¿½todos de la logica del negocio para la tabla de la base de datos Rol
  * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
@@ -18,7 +18,7 @@ import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 public class RolBLImpl implements RolBL {
 	private RolDAO rolDAO;
 	/* (non-Javadoc)
-	 * @see co.edu.udea.iw.prestamodispositivos.bl.RolBL#añadirRol(java.lang.Integer, java.lang.String)
+	 * @see co.edu.udea.iw.prestamodispositivos.bl.RolBL#aï¿½adirRol(java.lang.Integer, java.lang.String)
 	 */
 	@Override
 	public void añadirRol(Integer codigo, String nombre) throws DAOException {
@@ -29,7 +29,11 @@ public class RolBLImpl implements RolBL {
 			throw new DAOException("EL nombre del rol es erroneo");
 		}
 		Rol rol = new Rol(codigo, nombre);
-		rolDAO.guardar(rol);
+		try {
+			rolDAO.guardar(rol);
+		} catch (DAOException e) {
+			throw new DAOException(e);
+		}
 	}
 	/* (non-Javadoc)
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.RolBL#actualizarRol(java.lang.Integer, java.lang.String)
@@ -47,8 +51,8 @@ public class RolBLImpl implements RolBL {
 		}
 		Rol rol = new Rol(codigo, nombre);
 		rolDAO.actualizar(rol);
-		
 	}
+	
 	public RolDAO getRolDAO() {
 		return rolDAO;
 	}

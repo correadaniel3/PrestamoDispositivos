@@ -14,7 +14,7 @@
 		<property name="username" value="${dbUser}"></property>
 		<property name="password" value="${dbPass}"></property>
 	</bean>
-	
+
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="mappingResources" >
@@ -28,76 +28,55 @@
 			</list>
 		</property>
 		<property name="hibernateProperties">
-			<props>                    
+			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="javax.persistence.validation.mode">none</prop> 
+				<prop key="javax.persistence.validation.mode">none</prop>
 			</props>
 		</property>
-		
+
 	</bean>
-	
+
 	<bean name="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
-	
+
 	<bean id="usuarioDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.UsuarioDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory"></property> 
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+
 	<bean id="rolDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.RolDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory"></property> 
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+
 	<bean id="solicitudDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.SolicitudDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+
 	<bean id="tipodocumentoDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.TipodocumentoDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+
 	<bean id="dispositivoDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+
 	<bean id="tipodocumentoBL" class="co.edu.udea.iw.prestamodispositivos.bl.impl.TipodocumentoBLImpl">
 		<property name="tipodocumentoDAO" ref="tipodocumentoDAO"></property>
 	</bean>
-	
+
 	<bean id="solicitudBL" class="co.edu.udea.iw.prestamodispositivos.bl.impl.SolicitudBLImpl">
 		<property name="solicitudDAO" ref="solicitudDAO"></property>
 	</bean>
-	
 
-	<!-- 
 	<bean id="usuarioBlImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl">
-		<property name="usuarioDAO" ref="usuarioDAO"></property> 
-		<property name="rolDAO" ref="solicitudDAO"></property> 
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+		<property name="rolDAO" ref="rolDAO"></property>
 	</bean>
-	
-	<bean id="solicitudDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.SolicitudDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory"></property> 
+
+	<bean id="rolBLImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.RolBLImpl">
+		<property name="rolDAO" ref="rolDAO"></property>
 	</bean>
-	
-	<bean id="solicitudBlImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.SolicitudBLImpl">
-		<property name="solicitudDAO" ref="solicitudDAO"></property> 
-		<property name="" ref="solicitudDAO"></property> 
-	</bean>
-	
-	<bean id="clienteDao" class="com.edu.udea.iw.dao.hibernate.ClienteDaoImpHibernate">
-		<property name="sessionFactory" ref="sessionFactory"></property> 
-	</bean>
-	
-	<bean id="usuarioDao" class="com.edu.udea.iw.dao.hibernate.UsuarioDaoImpHibernate">
-		<property name="sessionFactory" ref="sessionFactory"></property> 
-	</bean>
-	
-	<bean id="usuarioBL" class="com.edu.udea.iw.bl.imp.UsuarioBLImpl">
-		<property name="dao" ref="usuarioDao"></property> 
-	</bean> 
-	 -->
-	
+
 </beans>
