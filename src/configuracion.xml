@@ -76,6 +76,10 @@
 		<property name="dispositivoDAO" ref="dispositivoDAO"></property>
 		<property name="estadosolicitudDAO" ref="estadosolicitudDAO"></property>
 	</bean>
+	
+	<bean id="estadosolicitudBLImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.EstadosolicitudBLImpl">
+		<property name="estadosolicitudDAO" ref="estadosolicitudDAO"></property>
+	</bean>
 
 	<bean id="usuarioBlImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl">
 		<property name="usuarioDAO" ref="usuarioDAO"></property>

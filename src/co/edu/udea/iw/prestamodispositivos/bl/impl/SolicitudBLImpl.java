@@ -5,9 +5,6 @@ package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
 import java.util.Date;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL;
 import co.edu.udea.iw.prestamodispositivos.dao.DispositivoDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;

@@ -38,7 +38,6 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 		tipodocumento.setId(id);
 		tipodocumento.setTipo(tipo);
 		tipodocumentoDAO.guardar(tipodocumento);
-
 	}
 
 	/* (non-Javadoc)
