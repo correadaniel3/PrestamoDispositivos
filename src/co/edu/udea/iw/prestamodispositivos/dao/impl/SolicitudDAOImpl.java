@@ -94,28 +94,6 @@ public class SolicitudDAOImpl implements SolicitudDAO {
 	}
 
 	/* (non-Javadoc)
-	 * @see co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO#borrar(java.lang.Integer)
-	 */
-	@Override
-	public void borrar(Integer id) throws DAOException {
-		Session session = null;
-		Solicitud solicitud = new Solicitud();
-		solicitud.setId(id);
-		try{
-			session = sessionFactory.openSession();
-			session.delete(solicitud);
-		}catch(HibernateException e){
-			throw new DAOException(e);
-		}finally{
-			try{
-				if(session!=null)session.close();
-			}catch(HibernateException e){
-				throw new DAOException(e);
-			}
-		}
-	}
-
-	/* (non-Javadoc)
 	 * @see co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO#obtenerPorId(java.lang.Integer)
 	 */
 	@Override

@@ -38,13 +38,6 @@ public interface SolicitudDAO {
 	
 	/**
 	 * 
-	 * @param id de la solicitud que se desea eliminar en la base de datos 
-	 * @throws DAOException
-	 */
-	public void borrar (Integer id) throws DAOException;
-	
-	/**
-	 * 
 	 * @param id de la solicitud que se desea buscar y obtener de la base de datos
 	 * @return la solicitud buscada en la base de datos
 	 * @throws DAOException
