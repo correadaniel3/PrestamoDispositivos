@@ -54,14 +54,12 @@ public class UsuarioBLImpl implements UsuarioBL {
 	public void registrar(String documento, Tipodocumento tipodocumento, String nombres, String apellidos,
 			String correoelectronico, Rol rol, String telefono, String contrasena, String nombreusuario)
 			throws DAOException {
-		//Como telefono es opcional en la base de datos entonces no tengo que validarlo?
 		Usuario usuario = null;
 		if(Validaciones.isTextoVacio(documento)){
 			throw new DAOException("El documento del usuario es incorrecto");
 		}
 		if(tipodocumento == null){
 			throw new DAOException("El tipo de documento del usuario es incorrecto");
-			//Validar que el tipo de documento ingresado exista (en el controlador?)
 		}
 		if(Validaciones.isTextoVacio(nombres)){
 			throw new DAOException("Los nombres del usuarios son incorrectos");
@@ -78,17 +76,13 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(rol == null){
 			throw new DAOException("El rol de usuario es incorrecto");
 		}
-		//No se si es valido hacer esta validacion en este punto o en el controlador
-		if(rolDAO.obtenerPorId(rol.getId()) == null){
-			throw new DAOException("El rol de usuario no existe");
-		}
 		if(Validaciones.isTextoVacio(contrasena)){
 			throw new DAOException("La contrase�a es incorrecta");
 		}
 		if(Validaciones.isTextoVacio(nombreusuario)){
 			throw new DAOException("El nombre de usuario es incorrecto");
 		}
-		if(usuarioDAO.obtenerPorId(nombreusuario) != null){
+		if(usuarioDAO.obtenerPorId(nombreusuario.trim().toLowerCase()) != null){
 			throw new DAOException("El nombre de usuario no esta disponible");
 		}
 		usuario = new Usuario(nombreusuario, rol, tipodocumento, documento,
@@ -108,7 +102,6 @@ public class UsuarioBLImpl implements UsuarioBL {
 		}
 		if(tipodocumento == null){
 			throw new DAOException("El tipo de documento del usuario es incorrecto");
-			//Validar que el tipo de documento ingresado exista (en el controlador?)
 		}
 		if(Validaciones.isTextoVacio(nombres)){
 			throw new DAOException("Los nombres del usuarios son incorrectos");
@@ -125,7 +118,6 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(rol == null){
 			throw new DAOException("El rol de usuario es incorrecto");
 		}
-		//No se si es valido hacer esta validacion en este punto o en el controlador
 		if(rolDAO.obtenerPorId(rol.getId()) == null){
 			throw new DAOException("El rol de usuario no existe");
 		}

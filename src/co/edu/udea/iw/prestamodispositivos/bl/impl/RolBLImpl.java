@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import java.util.List;
+
 import co.edu.udea.iw.prestamodispositivos.bl.RolBL;
 import co.edu.udea.iw.prestamodispositivos.dao.RolDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
@@ -27,6 +29,13 @@ public class RolBLImpl implements RolBL {
 		}
 		if(Validaciones.isTextoVacio(nombre)){
 			throw new DAOException("EL nombre del rol es erroneo");
+		}
+		List<Rol> resultado = rolDAO.obtenerTodos();
+		String nombreAux = nombre.trim().toLowerCase(); 
+		for (Rol rol : resultado) {
+			if (rol.getNombre().trim().toLowerCase().equalsIgnoreCase(nombreAux)) {
+				throw new DAOException("EL nombre del rol ya existe");
+			}
 		}
 		Rol rol = new Rol(codigo, nombre);
 		try {
