@@ -28,4 +28,16 @@ public interface SolicitudBL {
 	 * @throws DAOException
 	 */
 	public void guardar(Dispositivo dispositivo, Usuario usuario, int cantidad, Date fechainicio, Date fechafin) throws DAOException;
+	
+	/**
+	 * Metodo de la logica del negocio que valida la actualizacion de una solicitud
+	 * @param dispositivo asociado a la solicitud
+	 * @param usuario asociado a la solicitud
+	 * @param cantidad de dispositivos solicitados
+	 * @param fechainicio del prestamo
+	 * @param fechafin del prestamo
+	 * @param estadosolicitud para actualizar la solicitud
+	 * @throws DAOException
+	 */
+	public void actualizar(Dispositivo dispositivo, Usuario usuario, int cantidad, Date fechainicio, Date fechafin, Estadosolicitud estadosolicitud) throws DAOException;
 }

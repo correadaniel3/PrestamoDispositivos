@@ -66,10 +66,15 @@
 		<property name="tipodocumentoDAO" ref="tipodocumentoDAO"></property>
 	</bean>
 
+	<bean id="estadosolicitudDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.EstadosolicitudDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 	<bean id="solicitudBLImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.SolicitudBLImpl">
 		<property name="solicitudDAO" ref="solicitudDAO"></property>
 		<property name="usuarioDAO" ref="usuarioDAO"></property>
 		<property name="dispositivoDAO" ref="dispositivoDAO"></property>
+		<property name="estadosolicitudDAO" ref="estadosolicitudDAO"></property>
 	</bean>
 
 	<bean id="usuarioBlImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl">
