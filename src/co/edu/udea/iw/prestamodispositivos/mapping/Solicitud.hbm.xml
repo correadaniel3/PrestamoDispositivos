@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.prestamodispositivos.modelo.Solicitud" table="solicitud">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="dispositivo" class="co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo" fetch="select">
+            <column name="dispositivo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="estadosolicitud" class="co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud" fetch="select">
+            <column name="estadosolicitud" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="co.edu.udea.iw.prestamodispositivos.modelo.Usuario" fetch="select">
+            <column name="usuario" length="20" not-null="true" />
+        </many-to-one>
+        <property name="cantidad" type="int">
+            <column name="cantidad" not-null="true" />
+        </property>
+        <property name="fechainicio" type="java.util.Date">
+            <column name="fechainicio" length="19" not-null="true" />
+        </property>
+        <property name="fechafin" type="java.util.Date">
+            <column name="fechafin" length="19" not-null="true" />
+        </property>
+        <property name="fechasolicitud" type="java.util.Date">
+            <column name="fechasolicitud" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

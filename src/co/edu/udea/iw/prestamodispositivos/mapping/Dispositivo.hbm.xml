@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo" table="dispositivo">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="marca" type="java.lang.String">
+            <column name="marca" length="30" not-null="true" />
+        </property>
+        <property name="modelo" type="java.lang.String">
+            <column name="modelo" length="30" not-null="true" />
+        </property>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" length="50" not-null="true" />
+        </property>
+        <property name="descripcion" type="java.lang.String">
+            <column name="descripcion" length="300" not-null="true" />
+        </property>
+        <property name="cantidad" type="int">
+            <column name="cantidad" not-null="true" />
+        </property>
+        <property name="imagen" type="binary">
+            <column name="imagen" />
+        </property>
+    </class>
+</hibernate-mapping>

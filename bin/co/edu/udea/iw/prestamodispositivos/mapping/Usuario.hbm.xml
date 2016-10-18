@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.prestamodispositivos.modelo.Usuario" table="usuario">
+        <id name="nombreusuario" type="java.lang.String">
+            <column name="nombreusuario" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="rol" class="co.edu.udea.iw.prestamodispositivos.modelo.Rol" fetch="select">
+            <column name="rol" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipodocumento" class="co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento" fetch="select">
+            <column name="tipodocumento" not-null="true" />
+        </many-to-one>
+        <property name="documento" type="java.lang.String">
+            <column name="documento" length="20" not-null="true" />
+        </property>
+        <property name="nombres" type="java.lang.String">
+            <column name="nombres" length="50" not-null="true" />
+        </property>
+        <property name="apellidos" type="java.lang.String">
+            <column name="apellidos" length="50" not-null="true" />
+        </property>
+        <property name="correoelectronico" type="java.lang.String">
+            <column name="correoelectronico" length="50" not-null="true" />
+        </property>
+        <property name="telefono" type="java.lang.String">
+            <column name="telefono" length="20" />
+        </property>
+        <property name="contrasena" type="java.lang.String">
+            <column name="contrasena" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
