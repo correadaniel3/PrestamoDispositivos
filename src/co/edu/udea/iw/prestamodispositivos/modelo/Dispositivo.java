@@ -23,7 +23,7 @@ public class Dispositivo  implements java.io.Serializable {
 
     //Contructor con campos obligatorios
     public Dispositivo(String marca, String modelo, String nombre, String descripcion, int cantidad) {
-        this.marca = marca;
+    	this.marca = marca;
         this.modelo = modelo;
         this.nombre = nombre;
         this.descripcion = descripcion;

@@ -105,11 +105,12 @@ public class DispositivoDAOImpl implements DispositivoDAO {
 		Session session = null;
 		Transaction transaccion=null;
 		Dispositivo dispositivo = new Dispositivo();
-		dispositivo.setId(id);
+		dispositivo= obtenerPorId(id);
+		dispositivo.setCantidad(0);
 		try{
 			session = sessionFactory.openSession();
 			transaccion = session.beginTransaction();
-			session.delete(dispositivo);
+			session.update(dispositivo);
 			transaccion.commit();
 		}catch(HibernateException e){
 			transaccion.rollback();
@@ -146,6 +147,29 @@ public class DispositivoDAOImpl implements DispositivoDAO {
 		}
 		return resultado;
 	}
+	
+	@Override
+	public Dispositivo obtener(String marca, String modelo, String nombre) throws DAOException {
+		Session session = null;
+		Dispositivo resultado = null;
+		try{
+			session = sessionFactory.openSession();
+			Criteria criteria = session.createCriteria(Dispositivo.class)
+					.add(Restrictions.eq("marca",marca))
+					.add(Restrictions.eq("modelo", modelo))
+					.add(Restrictions.eq("nombre", nombre));
+			resultado = (Dispositivo)criteria.uniqueResult();
+		}catch(HibernateException e){
+			throw new DAOException(e);
+		}finally{
+			try{
+				if(session!=null)session.close();
+			}catch(HibernateException e){
+				throw new DAOException(e);
+			}
+		}
+		return resultado;
+	}
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -154,6 +178,8 @@ public class DispositivoDAOImpl implements DispositivoDAO {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
+	
 	
 	
 

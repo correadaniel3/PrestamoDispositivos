@@ -46,7 +46,13 @@ public class DispositivoBLImpl implements DispositivoBL {
 		}else{
 			dispositivo=new Dispositivo(marca,modelo,nombre,descripcion,cantidad,imagen);
 		}
-		dispositivoDAO.guardar(dispositivo);
+		Dispositivo dispositivo2=dispositivoDAO.obtener(marca, modelo, nombre);
+		if(dispositivo2!=null){
+			dispositivo2.setCantidad(dispositivo2.getCantidad()+cantidad);
+			dispositivoDAO.actualizar(dispositivo2);
+		}else{
+			dispositivoDAO.guardar(dispositivo);
+		}
 
 	}
 
@@ -61,6 +67,10 @@ public class DispositivoBLImpl implements DispositivoBL {
 			throw new DAOException("No ha ingresado el id del dispositivo a actualizar");
 		}
 		dispositivo=dispositivoDAO.obtenerPorId(id);
+		
+		if(dispositivo==null){
+			throw new DAOException("El dispositivo con el id: "+id+" No existe en la base de datos");
+		}
 		
 		if(Validaciones.isTextoVacio(marca)){
 			throw new DAOException("No ha ingresado la marca del dispositivo");
@@ -105,5 +115,15 @@ public class DispositivoBLImpl implements DispositivoBL {
 		dispositivoDAO.borrar(id);
 
 	}
+
+	public DispositivoDAO getDispositivoDAO() {
+		return dispositivoDAO;
+	}
+
+	public void setDispositivoDAO(DispositivoDAO dispositivoDAO) {
+		this.dispositivoDAO = dispositivoDAO;
+	}
+	
+	
 
 }

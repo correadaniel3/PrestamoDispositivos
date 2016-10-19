@@ -35,8 +35,7 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 		if(tipodocumento!=null){
 			throw new DAOException("El tipo de documento con el id: "+id+" ya existe");
 		}
-		tipodocumento.setId(id);
-		tipodocumento.setTipo(tipo);
+		tipodocumento=new Tipodocumento(id, tipo);
 		tipodocumentoDAO.guardar(tipodocumento);
 	}
 

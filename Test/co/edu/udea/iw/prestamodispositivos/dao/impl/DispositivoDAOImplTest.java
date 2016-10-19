@@ -8,16 +8,21 @@ import static org.junit.Assert.*;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.edu.udea.iw.prestamodispositivos.dao.DispositivoDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo;
 
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations=("classpath:configuracion.xml"))
 public class DispositivoDAOImplTest {
 	@Autowired
 	DispositivoDAO dao;
+	
 	 
 	/**
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl#guardar(co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo)}.
@@ -90,6 +95,22 @@ public class DispositivoDAOImplTest {
 			e.printStackTrace();
 			fail(e.getMessage());
 			
+		}
+	}
+	
+	
+	/**
+	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl#obtener(java.lang.String,java.lang.String,java.lang.String)}.
+	 */
+	@Test
+	public void testObtener() {
+		Dispositivo dispositivo;
+		try{
+			dispositivo = dao.obtener("prueba2","modelo","nombre");
+			assertTrue(dispositivo!=null);	
+		}catch (DAOException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
 		}
 	}
 

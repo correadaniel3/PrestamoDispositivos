@@ -5,7 +5,7 @@
     <class name="co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo" table="dispositivo">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <property name="marca" type="java.lang.String">
             <column name="marca" length="30" not-null="true" />

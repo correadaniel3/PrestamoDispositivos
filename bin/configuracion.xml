@@ -89,5 +89,9 @@
 	<bean id="rolBLImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.RolBLImpl">
 		<property name="rolDAO" ref="rolDAO"></property>
 	</bean>
+	
+	<bean id="dispositivoBLImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.DispositivoBLImpl">
+		<property name="dispositivoDAO" ref="dispositivoDAO"></property>
+	</bean>
 
 </beans>
