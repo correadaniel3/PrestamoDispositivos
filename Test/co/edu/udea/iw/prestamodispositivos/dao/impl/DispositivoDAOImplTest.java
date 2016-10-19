@@ -7,8 +7,10 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -19,6 +21,7 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations=("classpath:configuracion.xml"))
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DispositivoDAOImplTest {
 	@Autowired
 	DispositivoDAO dao;
@@ -28,7 +31,7 @@ public class DispositivoDAOImplTest {
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl#guardar(co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo)}.
 	 */
 	@Test
-	public void testGuardar() {
+	public void test1Guardar() {
 		Dispositivo dispositivo= new Dispositivo("marca","modelo","nombre","descripcion",5);
 		try{
 			dao.guardar(dispositivo);	
@@ -37,12 +40,12 @@ public class DispositivoDAOImplTest {
 			fail(e.getMessage());
 		}
 	}
-
+ 
 	/**
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl#obtenerTodos()}.
 	 */
 	@Test
-	public void testObtenerTodos() {
+	public void test2ObtenerTodos() {
 		List<Dispositivo> dispositivo;
 		try{
 			dispositivo = dao.obtenerTodos();
@@ -57,7 +60,7 @@ public class DispositivoDAOImplTest {
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl#actualizar(co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo)}.
 	 */
 	@Test
-	public void testActualizar() {
+	public void test3Actualizar() {
 		Dispositivo dispositivo;
 		try{
 			dispositivo= dao.obtenerPorId(1);
@@ -73,7 +76,7 @@ public class DispositivoDAOImplTest {
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl#obtenerPorId(java.lang.Integer)}.
 	 */
 	@Test
-	public void testObtenerPorId() {
+	public void test4ObtenerPorId() {
 		Dispositivo dispositivo;
 		try{
 			dispositivo = dao.obtenerPorId(1);
@@ -88,7 +91,7 @@ public class DispositivoDAOImplTest {
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.DispositivoDAOImpl#borrar(java.lang.Integer)}.
 	 */
 	@Test
-	public void testBorrar() {
+	public void test5Borrar() {
 		try{
 			dao.borrar(1);	
 		}catch (DAOException e) {
