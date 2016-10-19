@@ -49,6 +49,10 @@ public class DispositivoBLImpl implements DispositivoBL {
 		Dispositivo dispositivo2=dispositivoDAO.obtener(marca, modelo, nombre);
 		if(dispositivo2!=null){
 			dispositivo2.setCantidad(dispositivo2.getCantidad()+cantidad);
+			dispositivo2.setDescripcion(descripcion);
+			if(imagen!=null){
+				dispositivo2.setImagen(imagen);
+			}
 			dispositivoDAO.actualizar(dispositivo2);
 		}else{
 			dispositivoDAO.guardar(dispositivo);
