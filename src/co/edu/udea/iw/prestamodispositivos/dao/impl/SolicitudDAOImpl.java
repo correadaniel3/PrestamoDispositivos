@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -62,6 +63,7 @@ public class SolicitudDAOImpl implements SolicitudDAO {
 			session.save(solicitud);
 			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{
@@ -78,10 +80,14 @@ public class SolicitudDAOImpl implements SolicitudDAO {
 	@Override
 	public void actualizar(Solicitud solicitud) throws DAOException {
 		Session session = null;
+		Transaction transaccion = null;
 		try{
 			session = sessionFactory.openSession();
+			transaccion = session.beginTransaction();
 			session.update(solicitud);
+			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{
@@ -124,8 +130,9 @@ public class SolicitudDAOImpl implements SolicitudDAO {
 		List<Solicitud> resultado = null;
 		try{
 			session = sessionFactory.openSession();
-			Criteria criteria = session.createCriteria(Solicitud.class).add(Restrictions.eq("dispositivo",id));
-			resultado = criteria.list();
+			String hql = "FROM Solicitud E WHERE E.dispositivo = "+Integer.toString(id);
+			Query query = session.createQuery(hql);
+			resultado = query.list();
 		}catch(HibernateException e){
 			throw new DAOException(e);
 		}finally{
