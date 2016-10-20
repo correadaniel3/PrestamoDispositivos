@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import java.util.List;
+
 import co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL;
 import co.edu.udea.iw.prestamodispositivos.dao.RolDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.UsuarioDAO;
@@ -14,7 +16,7 @@ import co.edu.udea.iw.prestamodispositivos.util.encode.Cifrar;
 import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 
 /**
- * Clase que implementa los m�todos de la logica del negocio para la tabla usuario de la base de datos usuario
+ * Clase que implementa los metodos de la logica del negocio para la tabla usuario de la base de datos usuario
  * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
@@ -136,10 +138,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 				nombres, apellidos, correoelectronico, contrasena);
 		usuarioDAO.actualizar(usuario);
 	}
-
-	/* (non-Javadoc)
-	 * @see co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL#buscarPorID(java.lang.String)
-	 */
+	
 	@Override
 	public Usuario buscarPorID(String nombreusuario) throws DAOException {
 		Usuario usuario = null;
@@ -153,6 +152,16 @@ public class UsuarioBLImpl implements UsuarioBL {
 		return usuario;
 	}
 
+	@Override
+	public List<Usuario> obtenerTodos() throws DAOException {
+		List<Usuario> resultado = null;
+		resultado = usuarioDAO.obtenerTodos();
+		if (resultado == null) {
+			throw new DAOException("Actualmente no existen usuarios creados.");
+		}
+		return resultado;
+	}
+	
 	public RolDAO getRolDAO() {
 		return rolDAO;
 	}

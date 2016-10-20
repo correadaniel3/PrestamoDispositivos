@@ -3,7 +3,10 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
+import java.util.List;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -15,6 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.edu.udea.iw.prestamodispositivos.bl.RolBL;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
+import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 
 /**
  * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase RolBLImpl
@@ -27,26 +31,43 @@ import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RolBLImplTest {
 	@Autowired
-	RolBL dao;
-	/**
-	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.RolBLImpl#aï¿½adirRol(java.lang.Integer, java.lang.String)}.
-	 */
+	RolBL rolBL;
+	
 	@Test 
 	public void test1AñadirRol() {
 		try {
-			dao.guardar(12, "Gerente");
+			rolBL.guardar(13, "Gerente");
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}
 	}
  
-	/**
-	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.RolBLImpl#actualizarRol(java.lang.Integer, java.lang.String)}.
-	 */
 	@Test
 	public void test2ActualizarRol() {
 		try {
-			dao.actualizar(12, "jeje");
+			rolBL.actualizar(13, "jeje");
+		} catch (DAOException e) {
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void test3ObtenerRolPorID() {
+		Rol resultado = null;
+		try {
+			resultado = rolBL.obtenerPorID(13);
+			assertTrue(resultado!= null);
+		} catch (DAOException e) {
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test 
+	public void test4ObtenerTodos() {
+		List<Rol> resultado = null;
+		try {
+			resultado = rolBL.obtenerTodos();
+			assertTrue(resultado.size() > 0);
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}

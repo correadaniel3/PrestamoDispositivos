@@ -32,13 +32,13 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 public class UsuarioDAOImplTest {
 
 	@Autowired
-	UsuarioDAO dao;
+	UsuarioDAO usuarioDAO;
 	
 	@Test
 	public void test4ObtenerTodos() {
 		List<Usuario> resultado = null;
 		try {
-			resultado = dao.obtenerTodos();
+			resultado = usuarioDAO.obtenerTodos();
 			assertTrue(resultado.size() > 0);
 		} catch (DAOException e) {
 			fail(e.getMessage());
@@ -52,7 +52,7 @@ public class UsuarioDAOImplTest {
 				"julanito de tal", "de tales y pascuales", 
 				"julanito@pascuales.com", "julanito");
 		try {
-			dao.guardar(resultado);
+			usuarioDAO.guardar(resultado);
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}
@@ -62,7 +62,7 @@ public class UsuarioDAOImplTest {
 	public void test3ObtenerRolPorID() {
 		Usuario resultado = null;
 		try {
-			resultado = dao.obtenerPorId("julanito");
+			resultado = usuarioDAO.obtenerPorId("julanito");
 			assertTrue(resultado!= null);
 		} catch (DAOException e) {
 			fail(e.getMessage());
@@ -77,7 +77,7 @@ public class UsuarioDAOImplTest {
 					new Tipodocumento(2, "Tarjeta de Identidad"), "5000000",
 					"julanito de tal", "de nada", 
 					"julanito@pascuales.com", "julanito");
-			dao.actualizar(resultado);
+			usuarioDAO.actualizar(resultado);
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}

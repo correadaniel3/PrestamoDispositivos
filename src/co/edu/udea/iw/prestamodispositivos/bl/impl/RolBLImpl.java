@@ -12,7 +12,7 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 
 /**
- * Clase que implementa los m�todos de la logica del negocio para la tabla de la base de datos Rol
+ * Clase que implementa los metodos de la logica del negocio para la tabla de la base de datos Rol
  * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
@@ -62,6 +62,30 @@ public class RolBLImpl implements RolBL {
 		rolDAO.actualizar(rol);
 	}
 	
+	@Override
+	public List<Rol> obtenerTodos() throws DAOException {
+		List<Rol> resultado = null;
+		resultado = rolDAO.obtenerTodos();
+		if (resultado == null) {
+			throw new DAOException("Actualmente no existen roles creados.");
+		}
+		return resultado;
+	}
+	
+	@Override
+	public Rol obtenerPorID(int id) throws DAOException {
+		Rol resultado = null;
+		String idStr = Integer.toString(id);
+		if (Validaciones.isTextoVacio(idStr)) {
+			throw new DAOException("El identificador "+id+" de rol es incorrecto");
+		}
+		resultado = rolDAO.obtenerPorId(id);
+		if (resultado == null) {
+			throw new DAOException("No existe el rol con el identificador "+id);
+		}
+		return resultado;
+	}
+
 	public RolDAO getRolDAO() {
 		return rolDAO;
 	}

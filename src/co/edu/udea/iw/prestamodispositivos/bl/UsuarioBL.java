@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl;
 
+import java.util.List;
+
 import org.hibernate.exception.DataException;
 
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
@@ -11,7 +13,7 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 
 /**
- * Interfaz que expone los m�todos de la logica del negocio para la tabla usuario
+ * Interfaz que expone los metodos de la logica del negocio para la tabla usuario
  * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
@@ -20,7 +22,7 @@ public interface UsuarioBL {
 	/**
 	 * Metodo para verificar la validez de los datos de ingreso a la plataforma
 	 * @param nombreusuario nickname asociado a un usuario espec�fico
-	 * @param contrase�a asociado al usuario que corresponda al nickname
+	 * @param contrasenia asociado al usuario que corresponda al nickname
 	 * @return true si el ingreso de los datos es correcto
 	 * @throws DAOException
 	 */
@@ -64,4 +66,10 @@ public interface UsuarioBL {
 	 * @throws DAOException
 	 */
 	public Usuario buscarPorID(String nombreusuario) throws DAOException;
+	/**
+	 * Obtiene todos los usuarios existentes en la BD
+	 * @return lista de usuarios
+	 * @throws DAOException en caso que no existan usuarios en la BD
+	 */
+	public List<Usuario> obtenerTodos() throws DAOException;
 }

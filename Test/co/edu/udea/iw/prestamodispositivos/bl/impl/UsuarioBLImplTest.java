@@ -5,6 +5,8 @@ package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +19,7 @@ import co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
+import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 
 /**
  * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase UsuarioBLImpl
@@ -29,14 +32,14 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UsuarioBLImplTest {
 	@Autowired
-	UsuarioBL dao;
+	UsuarioBL usuarioBL;
 	/**
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl#validarAutentificacion(java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	public void test4ValidarAutentificacion() {
 		try {
-			assertTrue(dao.validarAutentificacion("nose", "nose"));
+			assertTrue(usuarioBL.validarAutentificacion("nose", "nose"));
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}
@@ -49,7 +52,7 @@ public class UsuarioBLImplTest {
 	@Test 
 	public void test1Registrar() {
 		try {
-			dao.registrar("20226", new Tipodocumento(1, "manager"), "nose", "nose",
+			usuarioBL.registrar("20226", new Tipodocumento(1, "manager"), "nose", "nose",
 					"nose@nose.com", new Rol(2, "Usuario"), "2313213", "nose", "nose");
 		} catch (DAOException e) {
 			fail(e.getMessage());
@@ -62,7 +65,7 @@ public class UsuarioBLImplTest {
 	@Test
 	public void test2ActualizarDatos() {
 		try {
-			dao.actualizarDatos("20226", new Tipodocumento(1, "manager"), "nose", "nose",
+			usuarioBL.actualizarDatos("20226", new Tipodocumento(2, "Tarjeta de identidad"), "nose y nose", "nose y nose",
 					"nose@nose.com", new Rol(2, "Usuario"), "2313213", "nose", "nose");
 		} catch (DAOException e) {
 			fail(e.getMessage());
@@ -74,8 +77,21 @@ public class UsuarioBLImplTest {
 	 */
 	@Test
 	public void test3BuscarPorID() {
+		Usuario resultado = null;
 		try {
-			dao.buscarPorID("nose");
+			resultado = usuarioBL.buscarPorID("nose");
+			assertTrue(resultado != null);
+		} catch (DAOException e) {
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void test4ObtenerTodos() {
+		List<Usuario> resultado = null;
+		try {
+			resultado = usuarioBL.obtenerTodos();
+			assertTrue(resultado.size() > 0);
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}

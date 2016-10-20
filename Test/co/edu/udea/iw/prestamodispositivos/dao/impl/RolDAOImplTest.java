@@ -28,14 +28,13 @@ import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RolDAOImplTest {
 	@Autowired
-	RolDAO dao;
+	RolDAO rolDAO;
 	
 	@Test 
 	public void test4ObtenerTodos() {
 		List<Rol> resultado = null;
 		try {
-			resultado = dao.obtenerTodos();
-			System.out.println(resultado.toString());
+			resultado = rolDAO.obtenerTodos();
 			assertTrue(resultado.size() > 0);
 		} catch (DAOException e) {
 			fail(e.getMessage());;
@@ -44,18 +43,18 @@ public class RolDAOImplTest {
 	
 	@Test
 	public void test1guardar() {
-		Rol resultado = new Rol(14212, "Usuario frecuente");
+		Rol resultado = new Rol(10, "Usuario frecuente");
 		try {
-			dao.guardar(resultado);
+			rolDAO.guardar(resultado);
 		} catch (DAOException e) {
-			fail(e.getMessage());;
+			fail(e.getMessage());
 		}
 	}
 	@Test
 	public void test3ObtenerRolPorID() {
 		Rol resultado = null;
 		try {
-			resultado = dao.obtenerPorId(120);
+			resultado = rolDAO.obtenerPorId(14212);
 			assertTrue(resultado!= null);
 		} catch (DAOException e) {
 			fail(e.getMessage());;
@@ -65,9 +64,9 @@ public class RolDAOImplTest {
 	public void test2actualizar() {
 		Rol resultado = new Rol();
 		try {
-			resultado.setId(1421);
-			resultado.setNombre("LOLO");
-			dao.actualizar(resultado);
+			resultado.setId(12);
+			resultado.setNombre("LOLOlolo");
+			rolDAO.actualizar(resultado);
 		} catch (DAOException e) {
 			fail(e.getMessage());;
 		}

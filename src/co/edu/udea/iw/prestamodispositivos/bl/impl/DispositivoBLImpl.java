@@ -10,7 +10,7 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo;
 import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 
 /**
- * Clase que implementa los métodos de la logica del negocio para la tabla dispositivo de la base de datos usuario
+ * Clase que implementa los metodos de la logica del negocio para la tabla dispositivo de la base de datos usuario
  * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
