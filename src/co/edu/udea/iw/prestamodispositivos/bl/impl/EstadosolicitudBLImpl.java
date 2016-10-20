@@ -52,8 +52,8 @@ public class EstadosolicitudBLImpl implements EstadosolicitudBL {
 			throw new DAOException("Debe ingresar un estado valido");
 		}
 		estadosolicitud=estadosolicitudDAO.obtenerPorId(id);
-		if(estadosolicitud!=null){
-			throw new DAOException("El estado con el id: "+id+" ya existe");
+		if(estadosolicitud==null){
+			throw new DAOException("El estado con el id: "+id+" no existe existe");
 		}
 		estadosolicitud = new Estadosolicitud(id,estado);
 		estadosolicitudDAO.actualizar(estadosolicitud);

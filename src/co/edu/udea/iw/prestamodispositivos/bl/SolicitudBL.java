@@ -31,6 +31,7 @@ public interface SolicitudBL {
 	
 	/**
 	 * Metodo de la logica del negocio que valida la actualizacion de una solicitud
+	 * @param id asociado a la solicitud
 	 * @param dispositivo asociado a la solicitud
 	 * @param usuario asociado a la solicitud
 	 * @param cantidad de dispositivos solicitados
@@ -39,5 +40,5 @@ public interface SolicitudBL {
 	 * @param estadosolicitud para actualizar la solicitud
 	 * @throws DAOException
 	 */
-	public void actualizar(Dispositivo dispositivo, Usuario usuario, int cantidad, Date fechainicio, Date fechafin, Estadosolicitud estadosolicitud) throws DAOException;
+	public void actualizar(Integer id, Dispositivo dispositivo, Usuario usuario, int cantidad, Date fechainicio, Date fechafin, Estadosolicitud estadosolicitud) throws DAOException;
 }

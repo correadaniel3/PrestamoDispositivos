@@ -80,8 +80,14 @@ public class SolicitudBLImpl implements SolicitudBL {
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL#actualizar(java.lang.Integer, co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo, co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud, co.edu.udea.iw.prestamodispositivos.modelo.Usuario, int, java.util.Date, java.util.Date, co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud)
 	 */
 	@Override
-	public void actualizar(Dispositivo dispositivo, Usuario usuario, int cantidad, Date fechainicio, Date fechafin,
+	public void actualizar(Integer id, Dispositivo dispositivo, Usuario usuario, int cantidad, Date fechainicio, Date fechafin,
 			Estadosolicitud estadosolicitud) throws DAOException {
+		if(id==null){
+			throw new DAOException("Ingrese un id valido");
+		}
+		if(solicitudDAO.obtenerPorId(id)==null){
+			throw new DAOException("No existe ninguna solicitud con el id ingresado");
+		}
 		if(dispositivo==null){
 			throw new DAOException("No ha seleccionado un dispositivo valido");
 		}
@@ -124,6 +130,7 @@ public class SolicitudBLImpl implements SolicitudBL {
         	throw new DAOException("La cantidad de dispositivos requeridos no esta disponible");
 		}
 		Solicitud nueva = new Solicitud(dispositivo, estadosolicitud, usuario, cantidad, fechainicio, fechafin, new Date());
+		nueva.setId(id);
 		solicitudDAO.actualizar(nueva);
 	}
 
