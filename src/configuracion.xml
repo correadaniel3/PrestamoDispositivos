@@ -52,6 +52,7 @@
 
 	<bean id="solicitudDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.SolicitudDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="dispositivoDAO" ref="dispositivoDAO"></property>
 	</bean>
 
 	<bean id="tipodocumentoDAO" class="co.edu.udea.iw.prestamodispositivos.dao.impl.TipodocumentoDAOImpl">

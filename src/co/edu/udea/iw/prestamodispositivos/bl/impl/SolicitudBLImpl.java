@@ -60,7 +60,7 @@ public class SolicitudBLImpl implements SolicitudBL {
         if(diff>28800){
         	throw new DAOException("El tiempo maximo de un prestamo son 8 horas, el tiempo excede este valor");
         }
-		List<Solicitud> todas = solicitudDAO.obtenerPorDispositivo(dispositivo.getId());
+		List<Solicitud> todas = solicitudDAO.obtenerPorDispositivo(dispositivo.getId(),fechainicio,fechafin);
 		int cantidadUsada = 0;
 		for(Solicitud sol:todas){
 			if(sol.getEstadosolicitud().getId()==2 || sol.getEstadosolicitud().getId()==5 || sol.getEstadosolicitud().getId()==6){
@@ -119,7 +119,7 @@ public class SolicitudBLImpl implements SolicitudBL {
         if(diff>28800){
         	throw new DAOException("El tiempo maximo de un prestamo son 8 horas, el tiempo excede este valor");
         }
-		List<Solicitud> todas = solicitudDAO.obtenerPorDispositivo(dispositivo.getId());
+		List<Solicitud> todas = solicitudDAO.obtenerPorDispositivo(dispositivo.getId(), fechainicio,fechafin);
 		int cantidadUsada = 0;
 		for(Solicitud sol:todas){
 			if(sol.getEstadosolicitud().getId()==2 || sol.getEstadosolicitud().getId()==5 || sol.getEstadosolicitud().getId()==6){

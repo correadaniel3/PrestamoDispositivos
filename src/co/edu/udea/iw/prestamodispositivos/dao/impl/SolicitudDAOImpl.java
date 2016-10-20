@@ -3,6 +3,9 @@
  */
 package co.edu.udea.iw.prestamodispositivos.dao.impl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -13,6 +16,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
+import co.edu.udea.iw.prestamodispositivos.dao.DispositivoDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Solicitud;
@@ -26,6 +30,7 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Solicitud;
 public class SolicitudDAOImpl implements SolicitudDAO {
 
 	private SessionFactory sessionFactory;
+	private DispositivoDAO dispositivoDAO;
 
 	/* (non-Javadoc)
 	 * @see co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO#obtenerTodos()
@@ -122,17 +127,19 @@ public class SolicitudDAOImpl implements SolicitudDAO {
 	}
 	
 	/* (non-Javadoc)
-	 * @see co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO#obtenerPorDispositivo(java.lang.Integer)
+	 * @see co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO#obtenerPorDispositivo(java.lang.Integer, java.util.Date, java.util.Date)
 	 */
 	@Override
-	public List<Solicitud> obtenerPorDispositivo(Integer id) throws DAOException {
+	public List<Solicitud> obtenerPorDispositivo(Integer id, Date fechainicio, Date fechafin) throws DAOException {
 		Session session = null;
 		List<Solicitud> resultado = null;
 		try{
 			session = sessionFactory.openSession();
-			String hql = "FROM Solicitud E WHERE E.dispositivo = "+Integer.toString(id);
-			Query query = session.createQuery(hql);
-			resultado = query.list();
+			Criteria criteria=session.createCriteria(Solicitud.class)
+					.add(Restrictions.eq("dispositivo", dispositivoDAO.obtenerPorId(id)));
+			criteria.add(Restrictions.between("fechainicio", fechainicio, fechafin));
+			criteria.add(Restrictions.between("fechafin", fechainicio, fechafin));
+			resultado = criteria.list();
 		}catch(HibernateException e){
 			throw new DAOException(e);
 		}finally{
@@ -152,4 +159,13 @@ public class SolicitudDAOImpl implements SolicitudDAO {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
+	public DispositivoDAO getDispositivoDAO() {
+		return dispositivoDAO;
+	}
+
+	public void setDispositivoDAO(DispositivoDAO dispositivoDAO) {
+		this.dispositivoDAO = dispositivoDAO;
+	}
+	
 }

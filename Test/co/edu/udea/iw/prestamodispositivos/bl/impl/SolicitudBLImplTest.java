@@ -60,7 +60,7 @@ public class SolicitudBLImplTest {
 			fail(e.getMessage());
 		}
 	}
-
+ 
 	/**
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.SolicitudBLImpl#actualizar(co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo, co.edu.udea.iw.prestamodispositivos.modelo.Usuario, int, java.util.Date, java.util.Date, co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud)}.
 	 */

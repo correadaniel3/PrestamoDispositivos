@@ -3,6 +3,7 @@
  */
 package co.edu.udea.iw.prestamodispositivos.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
@@ -47,8 +48,10 @@ public interface SolicitudDAO {
 	/**
 	 * 
 	 * @param id del dispositivo del cual se desea obtener las solicitudes
+	 * @param fechainicio de la solicitud
+	 * @param fechafin de la solicitud
 	 * @return lista de solicitudes asociadas a un dispositivo 
 	 * @throws DAOException
 	 */
-	public List<Solicitud> obtenerPorDispositivo (Integer id) throws DAOException;
+	public List<Solicitud> obtenerPorDispositivo (Integer id, Date fechainicio, Date fechafin) throws DAOException;
 }

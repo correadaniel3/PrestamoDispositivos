@@ -69,13 +69,15 @@ public class SolicitudDAOImplTest {
 	 */
 	@Test
 	public void test1Guardar() {
+		Date fechafin=new Date();
 		try{
+			fechafin.setMinutes(fechafin.getMinutes()+1);
 			Solicitud solicitud= new Solicitud();
 			solicitud.setCantidad(1);
 			solicitud.setUsuario(usuarioDAO.obtenerTodos().get(0));
 			solicitud.setDispositivo(dispositivoDAO.obtenerTodos().get(0));
 			solicitud.setEstadosolicitud(estadosolicitudDAO.obtenerPorId(2));
-			solicitud.setFechafin(new Date());
+			solicitud.setFechafin(fechafin);
 			solicitud.setFechainicio(new Date());
 			solicitud.setFechasolicitud(new Date());
 			solicitudDAO.guardar(solicitud);	
@@ -121,8 +123,10 @@ public class SolicitudDAOImplTest {
 	@Test
 	public void test5ObtenerPorDispositivo() {
 		List<Solicitud> solicitud;
+		Date fechafin=new Date(117,01,01);
+		Date fechainicio=new Date(115,01,01);
 		try{
-			solicitud = solicitudDAO.obtenerPorDispositivo(dispositivoDAO.obtenerTodos().get(0).getId());
+			solicitud = solicitudDAO.obtenerPorDispositivo(dispositivoDAO.obtenerTodos().get(0).getId(),fechainicio,fechafin);
 			assertTrue(solicitud.size()>0);	
 		}catch (DAOException e) {
 			e.printStackTrace();
