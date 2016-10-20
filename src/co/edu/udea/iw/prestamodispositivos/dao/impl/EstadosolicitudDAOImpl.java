@@ -15,7 +15,6 @@ import org.hibernate.criterion.Restrictions;
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud;
-import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 
 /**
  * Clase que implementa la interfaz EstadosolicitudDAO

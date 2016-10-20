@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import co.edu.udea.iw.prestamodispositivos.bl.EstadosolicitudBL;
 import co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL;
 import co.edu.udea.iw.prestamodispositivos.dao.DispositivoDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;

@@ -3,7 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.dao.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.List;
 
@@ -16,10 +17,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;
-import co.edu.udea.iw.prestamodispositivos.dao.TipodocumentoDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud;
-import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 
 /**
  * Pruebas unitarias para metodos de la clase EstadosolicitudDAOImpl

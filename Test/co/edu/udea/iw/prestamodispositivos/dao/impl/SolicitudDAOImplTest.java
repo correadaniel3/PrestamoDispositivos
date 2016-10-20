@@ -3,7 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.dao.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Date;
 import java.util.List;
@@ -23,12 +24,7 @@ import co.edu.udea.iw.prestamodispositivos.dao.SolicitudDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.TipodocumentoDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.UsuarioDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
-import co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo;
-import co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud;
-import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.modelo.Solicitud;
-import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
-import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
 
 /**
  * Pruebas unitarias para metodos de la clase SolicitudDAOImpl

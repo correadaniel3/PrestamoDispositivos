@@ -3,7 +3,7 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -14,7 +14,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.edu.udea.iw.prestamodispositivos.bl.EstadosolicitudBL;
-import co.edu.udea.iw.prestamodispositivos.bl.TipodocumentoBL;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 
 /**
