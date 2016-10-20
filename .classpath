@@ -4,28 +4,28 @@
 	<classpathentry kind="src" path="Test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/com.springsource.org.aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/commons-logging.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/hibernate3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-aop-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-beans-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-context-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-core-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-expression-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-jdbc-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-orm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-test-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-tx-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/PrestamoDispositivos/Librerias/spring-web-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/slf4j-log4j12-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-aop-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-beans-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-expression-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-jdbc-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-orm-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-test-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-tx-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/PrestamoDispositivos/Librerias/spring-web-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

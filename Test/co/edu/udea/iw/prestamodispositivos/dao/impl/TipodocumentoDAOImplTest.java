@@ -29,7 +29,6 @@ public class TipodocumentoDAOImplTest {
 	@Autowired
 	TipodocumentoDAO dao;
 	
-
 	/**
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.dao.impl.TipodocumentoDAOImpl#obtenerTodos()}.
 	 */
