@@ -15,6 +15,7 @@ import org.hibernate.criterion.Restrictions;
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud;
+import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 
 /**
  * Clase que implementa la interfaz EstadosolicitudDAO
@@ -63,6 +64,7 @@ public class EstadosolicitudDAOImpl implements EstadosolicitudDAO {
 			session.save(estadosolicitud);
 			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{
@@ -79,10 +81,14 @@ public class EstadosolicitudDAOImpl implements EstadosolicitudDAO {
 	@Override
 	public void actualizar(Estadosolicitud estadosolicitud) throws DAOException {
 		Session session = null;
+		Transaction transaccion = null;
 		try{
 			session = sessionFactory.openSession();
+			transaccion = session.beginTransaction();
 			session.update(estadosolicitud);
+			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{
@@ -99,12 +105,16 @@ public class EstadosolicitudDAOImpl implements EstadosolicitudDAO {
 	@Override
 	public void borrar(Integer id) throws DAOException {
 		Session session = null;
+		Transaction transaccion = null;
 		Estadosolicitud estadosolicitud = new Estadosolicitud();
 		estadosolicitud.setId(id);
 		try{
 			session = sessionFactory.openSession();
+			transaccion = session.beginTransaction();
 			session.delete(estadosolicitud);
+			transaccion.commit();
 		}catch(HibernateException e){
+			transaccion.rollback();
 			throw new DAOException(e);
 		}finally{
 			try{

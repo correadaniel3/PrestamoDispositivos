@@ -94,7 +94,6 @@ public class TipodocumentoDAOImpl implements TipodocumentoDAO {
 				throw new DAOException(e);
 			}
 		}
-
 	}
 
 	/* (non-Javadoc)
@@ -121,7 +120,6 @@ public class TipodocumentoDAOImpl implements TipodocumentoDAO {
 				throw new DAOException(e);
 			}
 		}
-
 	}
 
 	/* (non-Javadoc)

@@ -88,7 +88,6 @@ public class EstadosolicitudDAOImplTest {
 		}catch (DAOException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
-			
 		}
 	}
 
