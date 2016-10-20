@@ -3,8 +3,12 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import static org.junit.Assert.fail;
+
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -20,30 +24,31 @@ import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations=("classpath:configuracion.xml"))
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RolBLImplTest {
 	@Autowired
 	RolBL dao;
 	/**
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.RolBLImpl#aï¿½adirRol(java.lang.Integer, java.lang.String)}.
 	 */
-	//@Test 
-	public void testAñadirRol() {
+	@Test 
+	public void test1AñadirRol() {
 		try {
-			dao.añadirRol(12, "Gerente");
+			dao.guardar(12, "Gerente");
 		} catch (DAOException e) {
-			new DAOException(e);
+			fail(e.getMessage());
 		}
 	}
-
+ 
 	/**
 	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.RolBLImpl#actualizarRol(java.lang.Integer, java.lang.String)}.
 	 */
 	@Test
-	public void testActualizarRol() {
+	public void test2ActualizarRol() {
 		try {
-			dao.actualizarRol(12, "jeje");
+			dao.actualizar(12, "jeje");
 		} catch (DAOException e) {
-			new DAOException(e);
+			fail(e.getMessage());
 		}
 	}
 

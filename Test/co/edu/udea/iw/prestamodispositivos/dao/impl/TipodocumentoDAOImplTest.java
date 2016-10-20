@@ -21,6 +21,13 @@ import co.edu.udea.iw.prestamodispositivos.dao.TipodocumentoDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 
+
+/**
+ * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase TipodocumentoDAOImpl
+ * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
+ * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
+ * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations=("classpath:configuracion.xml"))
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -39,7 +46,6 @@ public class TipodocumentoDAOImplTest {
 			tipo = dao.obtenerTodos();
 			assertTrue(tipo.size()> 0);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 			
 		}
@@ -54,7 +60,6 @@ public class TipodocumentoDAOImplTest {
 		try{
 			dao.guardar(tipo);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -68,7 +73,6 @@ public class TipodocumentoDAOImplTest {
 		try{
 			dao.actualizar(tipo);
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -83,7 +87,6 @@ public class TipodocumentoDAOImplTest {
 			tipo = dao.obtenerPorId(20);
 			assertTrue(tipo!= null);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 			
 		}
@@ -97,7 +100,6 @@ public class TipodocumentoDAOImplTest {
 		try{
 			dao.borrar(20);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 			
 		}

@@ -56,7 +56,6 @@ public class SolicitudBLImplTest {
 		try{
 			solicitudBL.guardar(dispositivoDAO.obtenerTodos().get(0),usuarioDAO.obtenerTodos().get(0),1,new Date(), new Date());
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -69,7 +68,6 @@ public class SolicitudBLImplTest {
 		try{
 			solicitudBL.actualizar(solicitudDAO.obtenerTodos().get(0).getId(),dispositivoDAO.obtenerTodos().get(0),usuarioDAO.obtenerTodos().get(0),1,new Date(), new Date(),estadosolicitudDAO.obtenerPorId(3));
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}

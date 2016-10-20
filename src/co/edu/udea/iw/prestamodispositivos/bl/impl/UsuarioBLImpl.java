@@ -10,6 +10,7 @@ import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
+import co.edu.udea.iw.prestamodispositivos.util.encode.Cifrar;
 import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
 
 /**
@@ -39,6 +40,8 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(usuario == null){
 			throw new DAOException("El Usuario o la contrase�a ingresada son incorrectas");
 		}
+		Cifrar cifrado=new Cifrar();
+		contrasena=cifrado.encrypt(contrasena);
 		if(!usuario.getContrasena().equals(contrasena)){
 			throw new DAOException("El Usuario o la contrase�a ingresada son incorrectas");
 		}
@@ -83,6 +86,8 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(usuarioDAO.obtenerPorId(nombreusuario.trim().toLowerCase()) != null){
 			throw new DAOException("El nombre de usuario no esta disponible");
 		}
+		Cifrar cifrado=new Cifrar();
+		contrasena=cifrado.encrypt(contrasena);
 		usuario = new Usuario(nombreusuario, rol, tipodocumento, documento,
 				nombres, apellidos, correoelectronico, contrasena);
 		usuarioDAO.guardar(usuario);
@@ -125,6 +130,8 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if(Validaciones.isTextoVacio(nombreusuario)){
 			throw new DAOException("El nombre de usuario es incorrecto");
 		}
+		Cifrar cifrado=new Cifrar();
+		contrasena=cifrado.encrypt(contrasena);
 		usuario = new Usuario(nombreusuario, rol, tipodocumento, documento,
 				nombres, apellidos, correoelectronico, contrasena);
 		usuarioDAO.actualizar(usuario);

@@ -18,12 +18,12 @@ public interface RolBL {
 	 * @param nombre
 	 * @throws DAOException
 	 */
-	public void añadirRol(Integer codigo, String nombre) throws DAOException;
+	public void guardar(Integer codigo, String nombre) throws DAOException;
 	/**
 	 * Actualiza un rol que exista previamente
 	 * @param codigo
 	 * @param nombre
 	 * @throws DAOException
 	 */
-	public void actualizarRol(Integer codigo, String nombre) throws DAOException;
+	public void actualizar(Integer codigo, String nombre) throws DAOException;
 }

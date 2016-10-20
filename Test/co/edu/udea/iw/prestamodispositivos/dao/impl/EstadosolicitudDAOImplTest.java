@@ -44,7 +44,6 @@ public class EstadosolicitudDAOImplTest {
 			estadosolicitud = estadosolicitudDAO.obtenerTodos();
 			assertTrue(estadosolicitud.size()> 0);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -58,7 +57,6 @@ public class EstadosolicitudDAOImplTest {
 		try{
 			estadosolicitudDAO.guardar(estadosolicitud);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -72,7 +70,6 @@ public class EstadosolicitudDAOImplTest {
 		try{
 			estadosolicitudDAO.actualizar(estadosolicitud);
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -85,7 +82,6 @@ public class EstadosolicitudDAOImplTest {
 		try{
 			estadosolicitudDAO.borrar(99);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -100,7 +96,6 @@ public class EstadosolicitudDAOImplTest {
 			estadosolicitud = estadosolicitudDAO.obtenerPorId(99);
 			assertTrue(estadosolicitud!= null);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 			
 		}

@@ -7,8 +7,10 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -23,50 +25,51 @@ import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations=("classpath:configuracion.xml"))
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RolDAOImplTest {
 	@Autowired
 	RolDAO dao;
 	
 	@Test 
-	public void testObtenerTodos() {
+	public void test4ObtenerTodos() {
 		List<Rol> resultado = null;
 		try {
 			resultado = dao.obtenerTodos();
 			System.out.println(resultado.toString());
 			assertTrue(resultado.size() > 0);
 		} catch (DAOException e) {
-			new DAOException(e);
+			fail(e.getMessage());;
 		}
 	}
 	
 	@Test
-	public void testguardar() {
+	public void test1guardar() {
 		Rol resultado = new Rol(14212, "Usuario frecuente");
 		try {
 			dao.guardar(resultado);
 		} catch (DAOException e) {
-			new DAOException(e);
+			fail(e.getMessage());;
 		}
 	}
 	@Test
-	public void testObtenerRolPorID() {
+	public void test3ObtenerRolPorID() {
 		Rol resultado = null;
 		try {
 			resultado = dao.obtenerPorId(120);
 			assertTrue(resultado!= null);
 		} catch (DAOException e) {
-			new DAOException(e);
+			fail(e.getMessage());;
 		}
 	}
 	@Test
-	public void testEditCity() {
+	public void test2actualizar() {
 		Rol resultado = new Rol();
 		try {
 			resultado.setId(1421);
 			resultado.setNombre("LOLO");
 			dao.actualizar(resultado);
 		} catch (DAOException e) {
-			new DAOException(e);
+			fail(e.getMessage());;
 		}
 	}
 }

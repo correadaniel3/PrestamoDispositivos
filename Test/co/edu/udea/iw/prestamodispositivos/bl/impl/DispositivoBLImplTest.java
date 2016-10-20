@@ -16,6 +16,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import co.edu.udea.iw.prestamodispositivos.bl.DispositivoBL;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 
+
+/**
+ * Clase para realizar pruebas unitarias que validen el correcto funcionamiento de la clase DispositivoBLImpl
+ * @author Leon David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
+ * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
+ * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations=("classpath:configuracion.xml"))
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -32,7 +39,6 @@ public class DispositivoBLImplTest {
 		try{
 			dao.guardar("bayer","2016b","probeta","Probeta grande",4,null);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -45,7 +51,6 @@ public class DispositivoBLImplTest {
 		try{
 			dao.actualizar(1,"bayer","2016b","probeta","Probeta muy grande",4,null);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -58,7 +63,6 @@ public class DispositivoBLImplTest {
 		try{
 			dao.borrar(1);
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}

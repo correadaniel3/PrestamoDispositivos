@@ -59,7 +59,6 @@ public class SolicitudDAOImplTest {
 			solicitud = solicitudDAO.obtenerTodos();
 			assertTrue(solicitud.size()> 0);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -82,7 +81,6 @@ public class SolicitudDAOImplTest {
 			solicitud.setFechasolicitud(new Date());
 			solicitudDAO.guardar(solicitud);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -97,7 +95,6 @@ public class SolicitudDAOImplTest {
 			solicitud.setEstadosolicitud(estadosolicitudDAO.obtenerPorId(3));
 			solicitudDAO.actualizar(solicitud);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -112,7 +109,6 @@ public class SolicitudDAOImplTest {
 			solicitud = solicitudDAO.obtenerPorId(solicitudDAO.obtenerTodos().get(0).getId());
 			assertTrue(solicitud!= null);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -129,7 +125,6 @@ public class SolicitudDAOImplTest {
 			solicitud = solicitudDAO.obtenerPorDispositivo(dispositivoDAO.obtenerTodos().get(0).getId(),fechainicio,fechafin);
 			assertTrue(solicitud.size()>0);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}

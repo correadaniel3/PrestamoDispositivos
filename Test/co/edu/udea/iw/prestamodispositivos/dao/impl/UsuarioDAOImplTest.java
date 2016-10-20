@@ -7,8 +7,10 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -26,13 +28,14 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations=("classpath:configuracion.xml"))
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UsuarioDAOImplTest {
 
 	@Autowired
 	UsuarioDAO dao;
 	
 	@Test
-	public void testObtenerTodos() {
+	public void test4ObtenerTodos() {
 		List<Usuario> resultado = null;
 		try {
 			resultado = dao.obtenerTodos();
@@ -42,8 +45,8 @@ public class UsuarioDAOImplTest {
 		}
 	}
 	
-	//@Test
-	public void testguardar() {
+	@Test
+	public void test1guardar() {
 		Usuario resultado = new Usuario("julanito", new Rol(2, "Usuario"), 
 				new Tipodocumento(2, "Tarjeta de Identidad"), "220232302",
 				"julanito de tal", "de tales y pascuales", 
@@ -56,7 +59,7 @@ public class UsuarioDAOImplTest {
 	}
 	
 	@Test
-	public void testObtenerRolPorID() {
+	public void test3ObtenerRolPorID() {
 		Usuario resultado = null;
 		try {
 			resultado = dao.obtenerPorId("julanito");
@@ -67,7 +70,7 @@ public class UsuarioDAOImplTest {
 	}
 	
 	@Test
-	public void testEditCity() {
+	public void test2Actualizar() {
 		Usuario resultado = null;
 		try {
 			resultado = new Usuario("julanito", new Rol(2, "Usuario"), 

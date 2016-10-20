@@ -23,7 +23,7 @@ public class RolBLImpl implements RolBL {
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.RolBL#aï¿½adirRol(java.lang.Integer, java.lang.String)
 	 */
 	@Override
-	public void añadirRol(Integer codigo, String nombre) throws DAOException {
+	public void guardar(Integer codigo, String nombre) throws DAOException {
 		if(codigo == null){
 			throw new DAOException("EL codigo del rol es erroneo");
 		}
@@ -48,7 +48,7 @@ public class RolBLImpl implements RolBL {
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.RolBL#actualizarRol(java.lang.Integer, java.lang.String)
 	 */
 	@Override
-	public void actualizarRol(Integer codigo, String nombre) throws DAOException {
+	public void actualizar(Integer codigo, String nombre) throws DAOException {
 		if(codigo == null){
 			throw new DAOException("EL codigo del rol es erroneo");
 		}

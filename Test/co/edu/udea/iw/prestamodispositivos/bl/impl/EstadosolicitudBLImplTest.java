@@ -38,7 +38,6 @@ public class EstadosolicitudBLImplTest {
 		try{
 			estadosolicitudBL.guardar(99,"prueba");	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -51,7 +50,6 @@ public class EstadosolicitudBLImplTest {
 		try{
 			estadosolicitudBL.actualizar(99, "pruebaalterado");	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -64,7 +62,6 @@ public class EstadosolicitudBLImplTest {
 		try{
 			estadosolicitudBL.borrar(99);	
 		}catch (DAOException e) {
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
