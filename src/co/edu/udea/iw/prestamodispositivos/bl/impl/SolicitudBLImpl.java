@@ -5,6 +5,9 @@ package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL;
 import co.edu.udea.iw.prestamodispositivos.dao.DispositivoDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;
@@ -22,6 +25,7 @@ import co.edu.udea.iw.prestamodispositivos.modelo.Usuario;
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
+@Transactional
 public class SolicitudBLImpl implements SolicitudBL {
 
 	private SolicitudDAO solicitudDAO;

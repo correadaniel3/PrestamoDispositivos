@@ -4,6 +4,8 @@
 package co.edu.udea.iw.prestamodispositivos.bl;
 
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
+import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
+import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 
 /**
  * Interfaz que expone los métodos de la logica del negocio para la tabla Tipodocumento
@@ -35,6 +37,14 @@ public interface TipodocumentoBL {
 	 * @throws DAOException
 	 */
 	public void borrar(int id) throws DAOException;
+	
+	/**
+	 * Obtiene un Tipo de documento por su respectivo ID, en caso que exista
+	 * @param id
+	 * @return Tipodocumento asociado al parametro id
+	 * @throws DAOException en caso que no existe se lanzara la respectiva exception
+	 */
+	public Tipodocumento obtenerPorID(int id) throws DAOException;
 	
 	
 }

@@ -34,12 +34,12 @@ public class UsuarioBLImplTest {
 	@Autowired
 	UsuarioBL usuarioBL;
 	/**
-	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl#validarAutentificacion(java.lang.String, java.lang.String)}.
+	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl#autenticar(java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	public void test4ValidarAutentificacion() {
 		try {
-			assertTrue(usuarioBL.validarAutentificacion("nose", "nose"));
+			assertTrue(usuarioBL.autenticar("nose", "nose"));
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}
@@ -60,12 +60,12 @@ public class UsuarioBLImplTest {
 	}
 
 	/**
-	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl#actualizarDatos(java.lang.String, co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento, java.lang.String, java.lang.String, java.lang.String, co.edu.udea.iw.prestamodispositivos.modelo.Rol, java.lang.String, java.lang.String, java.lang.String)}.
+	 * Test method for {@link co.edu.udea.iw.prestamodispositivos.bl.impl.UsuarioBLImpl#actualizar(java.lang.String, co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento, java.lang.String, java.lang.String, java.lang.String, co.edu.udea.iw.prestamodispositivos.modelo.Rol, java.lang.String, java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	public void test2ActualizarDatos() {
 		try {
-			usuarioBL.actualizarDatos("20226", new Tipodocumento(2, "Tarjeta de identidad"), "nose y nose", "nose y nose",
+			usuarioBL.actualizar("20226", new Tipodocumento(2, "Tarjeta de identidad"), "nose y nose", "nose y nose",
 					"nose@nose.com", new Rol(2, "Usuario"), "2313213", "nose", "nose");
 		} catch (DAOException e) {
 			fail(e.getMessage());
@@ -92,6 +92,9 @@ public class UsuarioBLImplTest {
 		try {
 			resultado = usuarioBL.obtenerTodos();
 			assertTrue(resultado.size() > 0);
+			for (Usuario usuario : resultado) {
+				System.out.println(usuario.getNombreusuario());
+			}
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}

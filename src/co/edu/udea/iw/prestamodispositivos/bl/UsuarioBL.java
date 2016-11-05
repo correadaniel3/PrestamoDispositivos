@@ -26,17 +26,17 @@ public interface UsuarioBL {
 	 * @return true si el ingreso de los datos es correcto
 	 * @throws DAOException
 	 */
-	public Boolean validarAutentificacion(String nombreusuario, String contrasena ) throws DAOException;
+	public Boolean autenticar(String nombreusuario, String contrasena ) throws DAOException;
 	/**
 	 * Comprobar y guardar un nuevo usuario en la base de datos
-	 * @param documento identificaci�n del usuario
+	 * @param documento identificacion del usuario
 	 * @param tipodocumento tipo de documento asociado al usuario
-	 * @param nombres
-	 * @param apellidos
-	 * @param correoelectronico
+	 * @param nombres nombres del usuario
+	 * @param apellidos apellidos del usuario
+	 * @param correoelectronico correo electronico del usuario
 	 * @param rol tipo de rol que posee el usuario
-	 * @param telefono
-	 * @param contrasena
+	 * @param telefono telefono del usuario
+	 * @param contrasena contrasena del usuario
 	 * @param nombreusuario nickname unico con el que se identificara al usuario
 	 * @throws DAOException
 	 */
@@ -56,7 +56,7 @@ public interface UsuarioBL {
 	 * @param nombreusuario usuario a modificar, este campo no es modificable
 	 * @throws DataException
 	 */
-	public void actualizarDatos(String documento, Tipodocumento tipodocumento, String nombres,
+	public void actualizar(String documento, Tipodocumento tipodocumento, String nombres,
 			String apellidos, String correoelectronico, Rol rol, String telefono, String contrasena,
 			String nombreusuario)throws DAOException;
 	/**

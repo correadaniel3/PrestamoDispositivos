@@ -7,13 +7,13 @@
             <column name="id" />
             <generator class="increment" />
         </id>
-        <many-to-one name="dispositivo" class="co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo" fetch="select">
+        <many-to-one name="dispositivo" class="co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo" fetch="select" lazy="false">
             <column name="dispositivo" not-null="true" />
         </many-to-one>
-        <many-to-one name="estadosolicitud" class="co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud" fetch="select">
+        <many-to-one name="estadosolicitud" class="co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud" fetch="select" lazy="false">
             <column name="estadosolicitud" not-null="true" />
         </many-to-one>
-        <many-to-one name="usuario" class="co.edu.udea.iw.prestamodispositivos.modelo.Usuario" fetch="select">
+        <many-to-one name="usuario" class="co.edu.udea.iw.prestamodispositivos.modelo.Usuario" fetch="select" lazy="false">
             <column name="usuario" length="20" not-null="true" />
         </many-to-one>
         <property name="cantidad" type="int">

@@ -5,6 +5,8 @@ package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL;
 import co.edu.udea.iw.prestamodispositivos.dao.RolDAO;
 import co.edu.udea.iw.prestamodispositivos.dao.UsuarioDAO;
@@ -21,6 +23,7 @@ import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
+@Transactional
 public class UsuarioBLImpl implements UsuarioBL {
 
 	private UsuarioDAO usuarioDAO;
@@ -30,7 +33,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL#validarAutentificacion(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public Boolean validarAutentificacion(String nombreusuario, String contrasena) throws DAOException {
+	public Boolean autenticar(String nombreusuario, String contrasena) throws DAOException {
 		Usuario usuario = null;
 		if(Validaciones.isTextoVacio(nombreusuario)){
 			throw new DAOException("El nombre de usuario es incorrecto");
@@ -99,7 +102,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 	 * @see co.edu.udea.iw.prestamodispositivos.bl.UsuarioBL#actualizarDatos(java.lang.String, co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento, java.lang.String, java.lang.String, java.lang.String, co.edu.udea.iw.prestamodispositivos.modelo.Rol, java.lang.String, java.lang.String, java.lang.String)
 	 */
 	@Override
-	public void actualizarDatos(String documento, Tipodocumento tipodocumento, String nombres, String apellidos,
+	public void actualizar(String documento, Tipodocumento tipodocumento, String nombres, String apellidos,
 			String correoelectronico, Rol rol, String telefono, String contrasena, String nombreusuario) throws DAOException{
 		Usuario usuario = null;
 		if(Validaciones.isTextoVacio(documento)){

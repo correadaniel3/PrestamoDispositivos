@@ -5,6 +5,8 @@ package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.prestamodispositivos.bl.RolBL;
 import co.edu.udea.iw.prestamodispositivos.dao.RolDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
@@ -17,6 +19,7 @@ import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
+@Transactional
 public class RolBLImpl implements RolBL {
 	private RolDAO rolDAO;
 	/* (non-Javadoc)

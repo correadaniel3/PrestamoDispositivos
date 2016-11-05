@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.prestamodispositivos.bl.EstadosolicitudBL;
 import co.edu.udea.iw.prestamodispositivos.dao.EstadosolicitudDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
@@ -15,6 +17,7 @@ import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
+@Transactional
 public class EstadosolicitudBLImpl implements EstadosolicitudBL {
 
 	private EstadosolicitudDAO estadosolicitudDAO;

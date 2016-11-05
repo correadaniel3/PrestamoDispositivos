@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.prestamodispositivos.bl.TipodocumentoBL;
 import co.edu.udea.iw.prestamodispositivos.dao.TipodocumentoDAO;
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
@@ -15,6 +17,7 @@ import co.edu.udea.iw.prestamodispositivos.util.validations.Validaciones;
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Alexis Castrillon Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
+@Transactional
 public class TipodocumentoBLImpl implements TipodocumentoBL {
 	
 	private TipodocumentoDAO tipodocumentoDAO;
@@ -74,7 +77,19 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 			throw new DAOException("No existe el tipo de documento en la base de datos");
 		}
 		tipodocumentoDAO.borrar(id);
-		
+	}
+	
+	@Override
+	public Tipodocumento obtenerPorID(int id) throws DAOException {
+		Tipodocumento tipodocumento=null;
+		if(Validaciones.isTextoVacio(String.valueOf(id))){
+			throw new DAOException("Debe ingresar un id para el tipo de documento");
+		}
+		tipodocumento = tipodocumentoDAO.obtenerPorId(id);
+		if(tipodocumento==null){
+			throw new DAOException("No existe el tipo de documento en la base de datos");
+		}
+		return tipodocumento;
 	}
 
 	public TipodocumentoDAO getTipodocumentoDAO() {
@@ -83,8 +98,5 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 
 	public void setTipodocumentoDAO(TipodocumentoDAO tipodocumentoDAO) {
 		this.tipodocumentoDAO = tipodocumentoDAO;
-	}
-	
-	 
-
+	}		 
 }

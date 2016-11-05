@@ -1,11 +1,14 @@
 package co.edu.udea.iw.prestamodispositivos.modelo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase que referencia un objeto la tabla rol en la base de datos
  * @author León David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Aléxis Castrillón Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
+@XmlRootElement
 public class Rol  implements java.io.Serializable {
 
 

@@ -95,5 +95,7 @@
 	<bean id="dispositivoBLImpl" class="co.edu.udea.iw.prestamodispositivos.bl.impl.DispositivoBLImpl">
 		<property name="dispositivoDAO" ref="dispositivoDAO"></property>
 	</bean>
+    <context:component-scan base-package="co.edu.udea.iw.prestamodispositivos.ws"></context:component-scan>
+	
 
 </beans>

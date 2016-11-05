@@ -2,12 +2,15 @@ package co.edu.udea.iw.prestamodispositivos.modelo;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase que referencia un objeto la tabla solicitud en la base de datos
  * @author León David Osorio Tobon - leond.osorio@udea.edu.co - Universidad de Antioquia
  * @author Daniel Correa Arango - daniel.correa3@udea.edu.co - Universidad de Antioquia
  * @author Frank Aléxis Castrillón Giraldo - frank.castrillon@udea.edu.co - Universidad de Antioquia
  */
+@XmlRootElement
 public class Solicitud  implements java.io.Serializable {
 
 
