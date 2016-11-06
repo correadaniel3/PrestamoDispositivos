@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl;
 
+import java.util.List;
+
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
 import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
@@ -45,6 +47,13 @@ public interface TipodocumentoBL {
 	 * @throws DAOException en caso que no existe se lanzara la respectiva exception
 	 */
 	public Tipodocumento obtenerPorID(int id) throws DAOException;
+	
+	/**
+	 * Metodo para obtener todos los tipos de documento en la base de datos
+	 * @return lista con todos los tipos de documento
+	 * @throws DAOException
+	 */
+	public List<Tipodocumento> obtenerTodos() throws DAOException;
 	
 	
 }

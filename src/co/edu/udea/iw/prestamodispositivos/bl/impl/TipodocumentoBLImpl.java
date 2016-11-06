@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.prestamodispositivos.bl.TipodocumentoBL;
@@ -77,7 +79,7 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 			throw new DAOException("No existe el tipo de documento en la base de datos");
 		}
 		tipodocumentoDAO.borrar(id);
-	}
+	} 
 	
 	@Override
 	public Tipodocumento obtenerPorID(int id) throws DAOException {
@@ -91,6 +93,17 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 		}
 		return tipodocumento;
 	}
+	
+	@Override
+	public List<Tipodocumento> obtenerTodos() throws DAOException {
+		List<Tipodocumento> resultado;
+		try{
+			resultado=tipodocumentoDAO.obtenerTodos();
+		}catch(DAOException e){
+			throw new DAOException(e);
+		}
+		return resultado;
+	}	
 
 	public TipodocumentoDAO getTipodocumentoDAO() {
 		return tipodocumentoDAO;
@@ -98,5 +111,7 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 
 	public void setTipodocumentoDAO(TipodocumentoDAO tipodocumentoDAO) {
 		this.tipodocumentoDAO = tipodocumentoDAO;
-	}		 
+	}
+
+		 
 }
