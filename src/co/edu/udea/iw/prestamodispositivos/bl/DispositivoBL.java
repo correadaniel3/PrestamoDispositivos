@@ -3,7 +3,10 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl;
 
+import java.util.List;
+
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
+import co.edu.udea.iw.prestamodispositivos.modelo.Dispositivo;
 
 /**
  * Interfaz que expone los métodos de la logica del negocio para la tabla dispositivo
@@ -33,10 +36,11 @@ public interface DispositivoBL {
 	 * @param nombre
 	 * @param descripcion
 	 * @param cantidad
-	 * @param imagen
+	 * @param imagen 
 	 * @throws DAOException
 	 */
-	public void actualizar (Integer id, String marca, String modelo, String nombre, String descripcion, int cantidad, byte[] imagen) throws DAOException;
+	public void actualizar (Integer id, String marca, String modelo, String nombre, 
+			String descripcion, int cantidad, byte[] imagen) throws DAOException;
 	
 	
 	/**
@@ -45,5 +49,20 @@ public interface DispositivoBL {
 	 * @throws DAOException
 	 */
 	public void borrar(int id) throws DAOException;
+	
+	/**
+	 * Metodo para obtener todos los dispositivos de la base de datos
+	 * @return lista de dispositivos en la base de datos
+	 * @throws DAOException
+	 */
+	public List<Dispositivo> obtenerTodos () throws DAOException;
+	
+	/**
+	 * Metodo para obtener un dispositivo
+	 * @param id del dispositivo que se desea buscar y obtener de la base de datos
+	 * @return el dispositivo buscado en la base de datos
+	 * @throws DAOException
+	 */
+	public Dispositivo obtenerPorId (Integer id) throws DAOException;
 
 }

@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.prestamodispositivos.bl.DispositivoBL;
@@ -122,6 +124,29 @@ public class DispositivoBLImpl implements DispositivoBL {
 		dispositivoDAO.borrar(id);
 
 	}
+	
+	@Override
+	public List<Dispositivo> obtenerTodos() throws DAOException {
+		List<Dispositivo> resultado= null;
+		resultado=dispositivoDAO.obtenerTodos();
+		if(resultado==null){
+			throw new DAOException("No existe ningun dispositivo en la base de datos");
+		}
+		return resultado;
+	}
+
+	@Override
+	public Dispositivo obtenerPorId(Integer id) throws DAOException {
+		Dispositivo resultado=null;
+		if(Validaciones.isTextoVacio(String.valueOf(id))){
+			throw new DAOException("Debe ingresar el id del dispositivo");
+		}
+		resultado= dispositivoDAO.obtenerPorId(id);
+		if(resultado==null){
+			throw new DAOException("No existe un dispositivo con el id: "+id);
+		}
+		return resultado;
+	}
 
 	public DispositivoDAO getDispositivoDAO() {
 		return dispositivoDAO;
@@ -130,6 +155,8 @@ public class DispositivoBLImpl implements DispositivoBL {
 	public void setDispositivoDAO(DispositivoDAO dispositivoDAO) {
 		this.dispositivoDAO = dispositivoDAO;
 	}
+
+	
 	
 	
 

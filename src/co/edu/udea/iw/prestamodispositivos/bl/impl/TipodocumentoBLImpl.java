@@ -97,10 +97,9 @@ public class TipodocumentoBLImpl implements TipodocumentoBL {
 	@Override
 	public List<Tipodocumento> obtenerTodos() throws DAOException {
 		List<Tipodocumento> resultado;
-		try{
-			resultado=tipodocumentoDAO.obtenerTodos();
-		}catch(DAOException e){
-			throw new DAOException(e);
+		resultado=tipodocumentoDAO.obtenerTodos();
+		if(resultado==null){
+			throw new DAOException("No hay ningun tipo de documento en la base de datos");
 		}
 		return resultado;
 	}	
