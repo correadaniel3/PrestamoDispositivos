@@ -4,58 +4,54 @@
 	<classpathentry kind="src" path="Test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/asm-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/com.springsource.org.aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/commons-logging.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/hibernate3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jackson-core-asl-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jackson-jaxrs-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jackson-mapper-asl-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jackson-xc-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-apache-client-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-atom-abdera-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-client-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-core-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-guice-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-json-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-multipart-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-server-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-simple-server-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jersey-spring-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jettison-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jsr311-api-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/oauth-client-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/oauth-server-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/oauth-signature-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-aop-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-beans-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-context-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-core-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-expression-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-jdbc-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-orm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-test-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-tx-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/corre/workspace/LibreriasIW/spring-web-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0 (2)">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.utility"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_111">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jackson-core-asl-1.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jackson-jaxrs-1.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jackson-mapper-asl-1.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jackson-xc-1.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-apache-client-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-atom-abdera-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-client-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-core-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-guice-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-json-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-multipart-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-server-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-simple-server-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jersey-spring-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/oauth-client-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/oauth-server-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/oauth-signature-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/slf4j-log4j12-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-aop-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-beans-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-expression-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-jdbc-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-orm-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-test-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-tx-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/LEONDAVID/Documents/GitHub/LibreriasIW/spring-web-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

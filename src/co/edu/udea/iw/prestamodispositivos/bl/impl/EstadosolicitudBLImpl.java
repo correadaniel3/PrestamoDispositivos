@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl.impl;
 
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.prestamodispositivos.bl.EstadosolicitudBL;
@@ -68,7 +70,7 @@ public class EstadosolicitudBLImpl implements EstadosolicitudBL {
 	@Override
 	public void borrar(int id) throws DAOException {
 		if(Validaciones.isTextoVacio(String.valueOf(id))){
-			throw new DAOException("Debe ingresar un id para el tipo de documento");
+			throw new DAOException("Debe ingresar un id para el estado de solicitud");
 		}
 		Estadosolicitud estadosolicitud=null;
 		estadosolicitud=estadosolicitudDAO.obtenerPorId(id);
@@ -76,6 +78,29 @@ public class EstadosolicitudBLImpl implements EstadosolicitudBL {
 			throw new DAOException("No existe el estado en la base de datos");
 		}
 		estadosolicitudDAO.borrar(id);
+	}
+	
+	/* (non-Javadoc)
+	 * @see co.edu.udea.iw.prestamodispositivos.bl.EstadosolicitudBL#obtenerTodos()
+	 */
+	@Override
+	public List<Estadosolicitud> obtenerTodos () throws DAOException{
+		return estadosolicitudDAO.obtenerTodos();
+	}
+	
+	/* (non-Javadoc)
+	 * @see co.edu.udea.iw.prestamodispositivos.bl.EstadosolicitudBL#obtenerPorId(int)
+	 */
+	@Override
+	public Estadosolicitud obtenerPorId (Integer id) throws DAOException{
+		if(Validaciones.isTextoVacio(String.valueOf(id))){
+			throw new DAOException("Debe ingresar un id para el estado de solicitud");
+		}
+		Estadosolicitud resultado = estadosolicitudDAO.obtenerPorId(id);
+		if(resultado==null){
+			throw new DAOException("No existe ningun estado de solicitud con el id ingresado");
+		}
+		return resultado;
 	}
 
 	public EstadosolicitudDAO getEstadosolicitudDAO() {

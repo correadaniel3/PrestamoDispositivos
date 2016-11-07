@@ -3,7 +3,10 @@
  */
 package co.edu.udea.iw.prestamodispositivos.bl;
 
+import java.util.List;
+
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
+import co.edu.udea.iw.prestamodispositivos.modelo.Estadosolicitud;
 
 /**
  * Interfaz que expone los métodos de la logica del negocio para la tabla estadosolicitud
@@ -35,4 +38,19 @@ public interface EstadosolicitudBL {
 	 * @throws DAOException
 	 */
 	public void borrar(int id) throws DAOException;
+	
+	/**
+	 * Consultar todos los estados de solicitud almacenados en la base de datos
+	 * @return listado de estado de solicitud almacenados
+	 * @throws DAOException
+	 */
+	public List<Estadosolicitud> obtenerTodos () throws DAOException;
+	
+	/**
+	 * Consultar un estado de solicitud asociado a un id
+	 * @param id del estado que se desea buscar
+	 * @return el estado asociado al parametro id
+	 * @throws DAOException
+	 */
+	public Estadosolicitud obtenerPorId (Integer id) throws DAOException;
 }
