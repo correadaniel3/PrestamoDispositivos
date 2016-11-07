@@ -6,7 +6,6 @@ package co.edu.udea.iw.prestamodispositivos.bl;
 import java.util.List;
 
 import co.edu.udea.iw.prestamodispositivos.exception.DAOException;
-import co.edu.udea.iw.prestamodispositivos.modelo.Rol;
 import co.edu.udea.iw.prestamodispositivos.modelo.Tipodocumento;
 
 /**
