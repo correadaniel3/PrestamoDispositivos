@@ -137,7 +137,31 @@ public class SolicitudBLImpl implements SolicitudBL {
 		nueva.setId(id);
 		solicitudDAO.actualizar(nueva);
 	}
+	
+	/* (non-Javadoc)
+	 * @see co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL#obtenerTodos()
+	 */
+	@Override
+	public List<Solicitud> obtenerTodos () throws DAOException{
+		return solicitudDAO.obtenerTodos();
+	}
 
+	/* (non-Javadoc)
+	 * @see co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL#obtenerTodos(java.lang.Integer)
+	 */
+	@Override
+	public Solicitud obtenerPorId (Integer id) throws DAOException{
+		return solicitudDAO.obtenerPorId(id);
+	}
+	
+	/* (non-Javadoc)
+	 * @see co.edu.udea.iw.prestamodispositivos.bl.SolicitudBL#obtenerTodos(java.lang.Integer, java.util.Date, java.util.Date)
+	 */
+	@Override
+	public List<Solicitud> obtenerPorDispositivo (Integer id, Date fechainicio, Date fechafin) throws DAOException{
+		return solicitudDAO.obtenerPorDispositivo(id, fechainicio, fechafin);
+	}
+	
 	public SolicitudDAO getSolicitudDAO() {
 		return solicitudDAO;
 	}
